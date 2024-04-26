@@ -47,6 +47,15 @@ apple = Company.find_by({"name" => "Apple"})
 p apple
 p apple["name"]
 # 6. update a row's column value
+xom = Company.find_by({"name"=>"XOM"})
+p xom
+
+xom["url"] = "http://bb"
+xom.save
 
 
 # 7. delete a row
+x = Company.find_by({"name"=>"XOM"})
+x.destroy
+
+puts "There are #{Company.all.count} companies"
